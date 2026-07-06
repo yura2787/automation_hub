@@ -1,10 +1,6 @@
 require('dotenv').config();
 
-const required = [
-  'BOT_TOKEN',
-  'MANAGER_CHAT_ID',
-  'SPREADSHEET_ID',
-];
+const required = ['BOT_TOKEN', 'MANAGER_CHAT_ID', 'SPREADSHEET_ID'];
 
 for (const key of required) {
   if (!process.env[key]) {
