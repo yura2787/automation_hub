@@ -1,5 +1,7 @@
 const { createBot, registerScenes } = require('./bot');
 const { scene: leadScene } = require('./bot/scenes/leadScene');
+const { startHandler } = require('./bot/handlers/start');
+const { statusHandler } = require('./bot/handlers/status');
 const sheets = require('./services/sheets');
 const notifier = require('./services/notifier');
 
@@ -19,7 +21,8 @@ async function main() {
 
   registerScenes(bot, [leadScene]);
 
-  // feat/bot-handlers — start and status commands wired here
+  bot.command('start', startHandler);
+  bot.command('status', statusHandler);
 
   bot.catch((err, ctx) => {
     console.error(`[bot] error for ${ctx.updateType}:`, err.message);
