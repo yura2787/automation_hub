@@ -10,6 +10,7 @@
 
 <img width="1496" height="1296" alt="2026-07-06_18-24" src="https://github.com/user-attachments/assets/d8ca4bd7-c7b1-45c8-87bb-75e97014dab4" />
 
+<img width="1648" height="1450" alt="2026-07-06_18-24_1" src="https://github.com/user-attachments/assets/db817e57-049f-4b08-99b1-a7d68e706184" />
 
 
 A full-stack business automation system that handles client lead collection, data storage, document generation, and multi-channel manager notifications — all without manual work.
