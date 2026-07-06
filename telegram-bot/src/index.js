@@ -1,6 +1,6 @@
 const { createBot, registerScenes } = require('./bot');
 const { scene: leadScene } = require('./bot/scenes/leadScene');
-const { startHandler } = require('./bot/handlers/start');
+const { startHandler, newLeadAction } = require('./bot/handlers/start');
 const { statusHandler } = require('./bot/handlers/status');
 const sheets = require('./services/sheets');
 const notifier = require('./services/notifier');
@@ -23,6 +23,11 @@ async function main() {
 
   bot.command('start', startHandler);
   bot.command('status', statusHandler);
+  bot.action('new_lead', newLeadAction);
+  bot.action('check_status', async (ctx) => {
+    await ctx.answerCbQuery();
+    await statusHandler(ctx);
+  });
 
   bot.catch((err, ctx) => {
     console.error(`[bot] error for ${ctx.updateType}:`, err.message);
