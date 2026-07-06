@@ -1,0 +1,22 @@
+# Secrets
+.env
+credentials.json
+*.pem
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Build / temp
+dist/
+tmp/
