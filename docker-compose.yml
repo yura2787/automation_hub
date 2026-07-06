@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: ./telegram-bot
+    container_name: automation-hub-bot
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - MANAGER_CHAT_ID=${MANAGER_CHAT_ID}
+      - SPREADSHEET_ID=${SPREADSHEET_ID}
+      - GOOGLE_CREDENTIALS_PATH=/app/credentials.json
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+    restart: always
