@@ -1,10 +1,25 @@
 const { createBot, registerScenes } = require('./bot');
+const { scene: leadScene } = require('./bot/scenes/leadScene');
+const sheets = require('./services/sheets');
+const notifier = require('./services/notifier');
 
 async function main() {
   const bot = createBot();
 
-  // feat/lead-scene  — registerScenes(bot, [leadScene])
-  // feat/bot-handlers — start and status commands
+  // Inject services into ctx so scenes and handlers can use them without direct imports
+  bot.use((ctx, next) => {
+    ctx.services = {
+      sheets,
+      notifier: {
+        notifyManager: (lead, rowId) => notifier.notifyManager(bot, lead, rowId),
+      },
+    };
+    return next();
+  });
+
+  registerScenes(bot, [leadScene]);
+
+  // feat/bot-handlers — start and status commands wired here
 
   bot.catch((err, ctx) => {
     console.error(`[bot] error for ${ctx.updateType}:`, err.message);
