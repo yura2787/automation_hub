@@ -1,5 +1,17 @@
 # Automation Hub
 
+
+
+
+<img width="904" height="484" alt="2026-07-06_18-23" src="https://github.com/user-attachments/assets/393b8b44-e9c8-4755-8700-2d4c3e1dac11" />
+
+
+<img width="2018" height="1028" alt="2026-07-06_18-26" src="https://github.com/user-attachments/assets/affa13a5-b459-4c0b-930a-ebb987d04ea5" />
+
+<img width="1496" height="1296" alt="2026-07-06_18-24" src="https://github.com/user-attachments/assets/d8ca4bd7-c7b1-45c8-87bb-75e97014dab4" />
+
+
+
 A full-stack business automation system that handles client lead collection, data storage, document generation, and multi-channel manager notifications — all without manual work.
 
 **Stack:** Node.js · Telegraf · Google Sheets API · Google Apps Script · Google Drive API · Docker
