@@ -1,7 +1,7 @@
 {
   "name": "automation-hub-bot",
   "version": "1.0.0",
-  "description": "Telegram bot for automation hub — collects leads and saves to Google Sheets",
+  "description": "Telegram bot that collects leads and saves them to Google Sheets",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
