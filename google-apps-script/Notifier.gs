@@ -15,14 +15,6 @@ var Notifier = (function () {
       'Automation Hub';
   }
 
-  function getPdfBlob(pdfUrl) {
-    // Fetch the PDF file from Drive as a blob for email attachment
-    var fileId = pdfUrl.match(/[-\w]{25,}/);
-    if (!fileId) return null;
-    var file = DriveApp.getFileById(fileId[0]);
-    return file.getBlob().setName('Lead_' + lead.rowNumber + '.pdf');
-  }
-
   function sendEmail(lead, pdfUrl) {
     if (!MANAGER_EMAIL) {
       Logger.log('[Notifier] MANAGER_EMAIL script property is not set');
